@@ -1,0 +1,29 @@
+Listing Data
+<table border=2>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th colspan="2"></th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% @result.each do |res| %>
+      <tr>
+        <td><%= res['id'] %></td>
+        <td><%= res['name'] %></td>
+        <td><%= res['age'] %></td>
+        <td><%= res['gender'] %></td>
+        <td><%= link_to "Edit", edit_student_path(res['id']) %></td>
+        <td><%= link_to "Delete", delete_student_path(res['id']), :method => 'delete' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'new record', new_student_path %>
+
+
+

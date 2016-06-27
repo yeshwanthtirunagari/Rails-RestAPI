@@ -1,0 +1,18 @@
+<%= form_for(:student, url: update_student_path, :method => "put") do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :value => @student['name'] %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age, :value => @student['age'] %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, ['Male', 'Female'], :selected => @student['gender'] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
